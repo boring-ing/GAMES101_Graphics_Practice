@@ -1,1 +1,2 @@
 D:\Graphics\project\test0\test0\x64\Debug\test0.exe
+D:\Graphics\GAMES101_Graphics_Practice\project\test0\test0\x64\Debug\test0.exe

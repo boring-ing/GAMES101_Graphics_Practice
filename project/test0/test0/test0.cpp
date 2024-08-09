@@ -45,10 +45,25 @@ int main()
     // matrix output
     std::cout << "矩阵i输出 \n";
     std::cout << i << std::endl;
+
+    std::cout << "矩阵j输出 \n";
+    std::cout << j << std::endl;
     // matrix add i + j
+    std::cout << "矩阵i + j输出 \n";
+    std::cout << i + j << std::endl;
     // matrix scalar multiply i * 2.0
+    std::cout << "矩阵i  * 2输出 \n";
+    std::cout << i * 2 << std::endl;
     // matrix multiply i * j
+    std::cout << "矩阵i  * j输出 \n";
+    std::cout << i * j << std::endl;
+
+    std::cout << "矩阵j  * i输出 \n";
+    std::cout << j * i << std::endl;
     // matrix multiply vector i * v
+
+    std::cout << "矩阵i * v输出 \n";
+    std::cout << i * v << std::endl;
 
 
     Eigen::Matrix3d testMatrix3d;
@@ -60,5 +75,39 @@ int main()
     std::cout << testMatrix3d << std::endl;
 
     std::cout << "sin30为：" << sin(cita / 180.0 * PI) << std::endl;
+
+
+    Eigen::Vector2i PointP(2, 1);
+    
+    std::cout << "测试点输出P" << std::endl;
+
+    std::cout << PointP.x() << std::endl;
+
+
+    //以下为test0求解的内容
+    Eigen::Vector2i MoveVector(1, 2);
+
+    Eigen::Matrix3d TransMatrix2D;
+
+    Eigen::Vector3d InPos(2,1,1);
+    Eigen::Vector3d FinPos;
+
+    cita = 45;
+
+    TransMatrix2D << cos(cita / 180.0 * PI), -1 * sin(cita / 180.0 * PI), MoveVector.x(),
+        sin(cita / 180.0 * PI), cos(cita / 180.0 * PI), MoveVector.y(),
+        0, 0, 1;
+
+    std::cout << "变换矩阵输出" << std::endl;
+
+    std::cout << TransMatrix2D << std::endl;
+
+    FinPos = TransMatrix2D * InPos;
+
+    std::cout << "最终点位输出" << std::endl;
+
+    std::cout << FinPos << std::endl;
+                     
+
     return 0;
 }
